@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:16:09 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/28 19:47:28 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/29 10:50:17 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,59 @@ void	swap(t_stack *x)
 	x->stack[1] = temp;
 }
 
-void	push(t_stack *a, t_stack *b)
+void	push(t_stack *dest, t_stack *src)
 {
 	int	top;
-	int	temp;
 	int	i;
 
-	i = a->size;
-	if (b->size == 0)
+	i = dest->size;
+	if (src->size == 0)
 		return ;
-	top = b->stack[0];
+	top = src->stack[0];
+	src->stack[0] = 0;
+	dest->size++;
 	while (i > 0)
 	{
-		a->stack[i] = a->stack[i - 1];
+		dest->stack[i] = dest->stack[i - 1];
 		i--;
 	}
-	a->stack[0] = top;
+	i = 0;
+	while (i < src->size - 1)
+	{
+		src->stack[i] = src->stack[i + 1];
+		i++;
+	}
+	src->stack[src->size - 1] = 0;
+	src->size--;
+	dest->stack[0] = top;
+}
+
+void	rotate(t_stack *x)
+{
+	int	i;
+	int	temp;
+
+	temp = x->stack[0];
+	i = 0;
+	while (i < x->size - 1)
+	{
+		x->stack[i] = x->stack[i + 1];
+		i++;
+	}
+	x->stack[x->size - 1] = temp;
+}
+
+void	reverse_rotate(t_stack *x)
+{
+	int	i;
+	int	temp;
+
+	i = x->size - 1;
+	temp = x->stack[x->size - 1];
+	while (i > 0)
+	{
+		x->stack[i] = x->stack[i - 1];
+		i--;
+	}
+	x->stack[0] = temp;
 }

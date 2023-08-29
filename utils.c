@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 17:04:29 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/29 10:49:51 by dlima            ###   ########.fr       */
+/*   Created: 2023/08/29 09:57:10 by dlima             #+#    #+#             */
+/*   Updated: 2023/08/29 10:36:03 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "./libft/libft.h"
-# include <signal.h>
-# include <unistd.h>
-# include <stdio.h>
-
-typedef struct Stack
+void	print_stack(t_stack *a, t_stack *b)
 {
-	int	*stack;
-	int	size;
-}	t_stack;
+	int	i;
 
-void	print_stack(t_stack *a, t_stack *b);
-void	swap(t_stack *x);
-void	push(t_stack *dest, t_stack *src);
-void	rotate(t_stack *x);
-void	reverse_rotate(t_stack *x);
-
-#endif
+	i = 0;
+	while (i < a->size || i < b->size)
+	{
+		ft_printf("%d    %d\n", a->stack[i], b->stack[i]);
+		i++;
+	}
+	ft_printf("--   --\n");
+	ft_printf("a    b\n");
+}

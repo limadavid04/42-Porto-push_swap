@@ -3,7 +3,7 @@ CC = cc
 CFLAGS =-Wall -Wextra -Werror -g #-fsanitize=address
 LIBFT = ./libft/libft.a
 NAME = push_swap
-FILES = main
+FILES = main utils moves
 
 all: $(NAME)
 

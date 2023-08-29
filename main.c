@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:29:13 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/28 19:45:58 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/29 11:07:31 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	get_list(int *stack_a, char *argv[], int size)
 	while (i < size)
 	{
 		stack_a[i] = ft_atoi(argv[i + 1]);
-		// ft_printf("%d ", stack_a[i]);
 		i++;
 	}
 }
@@ -45,7 +44,6 @@ int	is_num(char	*str)
 
 int	check_arguments(int argc, char *argv[])
 {
-	ft_printf("argc = %d\n", argc);
 	if (argc < 2)
 		return (0);
 	while (argc > 1)
@@ -61,14 +59,6 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;
-	// int		*stack_b;
-
-
-	// while (size > 0)
-	// {
-	// 	ft_printf("%s ", argv[size]);
-	// 	size--;
-	// }
 
 	if (!check_arguments(argc, argv))
 	{
@@ -82,8 +72,16 @@ int	main(int argc, char *argv[])
 	b->size = 0;
 	b->stack = (int *)ft_calloc(a->size, sizeof(int));
 	get_list(a->stack, argv, a->size);
-	ft_printf("GOOD LIST");
+
+
+	print_stack(a, b);
+	write(1, "\n", 1);
+	free(a->stack);
+	free(b->stack);
+	free(a);
+	free(b);
 	return (0);
 }
 
 //check duplicates
+//check for max int and min int
