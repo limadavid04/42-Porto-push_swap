@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:04:29 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/30 13:18:24 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/30 17:40:26 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct Stack
 {
 	int	*stack;
 	int	size;
+	int	*pivots;
 }	t_stack;
 
 void	print_stack(t_stack *a, t_stack *b);
@@ -41,6 +42,9 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	push_swap(t_stack *a);
 int		max_index(t_stack *a);
-int	min_index(t_stack *a);
+int		min_index(t_stack *a);
+void	push_swap_100(t_stack *a, t_stack *b);
+void	bubble_sort(t_stack *a);
+void	array_cpy(t_stack *a, t_stack *cpy);
 
 #endif
