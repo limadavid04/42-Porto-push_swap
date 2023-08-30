@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:29:13 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/30 13:46:10 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/30 18:24:36 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int	main(int argc, char *argv[])
 	// ft_printf("max_index = %d\n", max_index(a));
 	// ft_printf("min_index = %d\n", min_index(a));
 	push_swap(a);
+	free_stack(a);
 	return (0);
 }
 
