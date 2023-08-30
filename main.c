@@ -6,11 +6,13 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:29:13 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/29 16:14:54 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/30 13:46:10 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
 
 int	check_duplicates(t_stack *x)
 {
@@ -81,7 +83,6 @@ int	check_arguments(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	t_stack	*b;
 
 	if (!check_arguments(argc, argv))
 	{
@@ -91,29 +92,25 @@ int	main(int argc, char *argv[])
 	a = malloc(sizeof(t_stack));
 	a->size = argc - 1;
 	a->stack = (int *)ft_calloc(a->size, sizeof(int));
-	b = malloc(sizeof(t_stack));
-	b->size = 0;
-	b->stack = (int *)ft_calloc(a->size, sizeof(int));
+
 	get_list(a->stack, argv, a->size);
 	if (!(check_duplicates(a)))
 	{
-		free(a->stack);
-		free(b->stack);
-		free(a);
-		free(b);
+		free_stack(a);
 		ft_printf("ERROR\n");
 		return (0);
 	}
-
-	print_stack(a, b);
-	write(1, "\n", 1);
-	free(a->stack);
-	free(b->stack);
-	free(a);
-	free(b);
+	if (is_sorted(a))
+	{
+		free_stack(a);
+		return (0);
+	}
+	// ft_printf("max_index = %d\n", max_index(a));
+	// ft_printf("min_index = %d\n", min_index(a));
+	push_swap(a);
 	return (0);
 }
 
-//check duplicates
 //check for max int and min int
 //should I check for 0 and -0?
+// if arg = 1 just print it
