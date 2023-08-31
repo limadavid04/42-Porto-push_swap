@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:04:29 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 15:36:05 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 17:07:39 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		get_index_bottom(t_stack *a, int mid, int pivot);
 void	push_from_bottom(t_stack *a, t_stack *b, int pivot);
 void	push_from_top(t_stack *a, t_stack *b, int pivot);
 void	get_pivots(t_stack *a_cpy, int n_chunks);
+void	sort_nbrs_into_a(t_stack *a, t_stack *b);
 
 
 #endif

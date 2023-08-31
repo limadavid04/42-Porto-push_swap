@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:50:44 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 15:53:26 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 18:12:03 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ void	push_swap(t_stack *a)
 		push_swap_5(a, b);
 	else if (a->size <= 100)
 		push_swap_100(a, b);
-	print_stack(a, b);
+	// print_stack(a, b);
+	// if (is_sorted(a))
+	// 	ft_printf("LEZZZZZ GOOOOOOOOOOO");
 	free(b->stack);
 	free(b);
 }
