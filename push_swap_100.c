@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:38:14 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 18:24:46 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 23:05:00 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ void	push_by_chunk(t_stack *a, t_stack *b, int n_chunks)
 		{
 			if (get_closest_chunk_nbr(a, a->pivots[i]) == 0)
 				break ;
-			else if (get_closest_chunk_nbr(a, a->pivots[i]) == 1)
-				push_from_top(a, b, a->pivots[i]);
-			else if (get_closest_chunk_nbr(a, a->pivots[i]) == 2)
-				push_from_bottom(a, b, a->pivots[i]);
+			// else if (get_closest_chunk_nbr(a, a->pivots[i]) == 1)
+			push_from_top(a, b, a->pivots[i]);
+			// else if (get_closest_chunk_nbr(a, a->pivots[i]) == 2)
+			// 	push_from_bottom(a, b, a->pivots[i]);
 		}
 		i++;
 	}
@@ -89,7 +89,7 @@ void	push_swap_100(t_stack *a, t_stack *b, int bigger_100)
 {
 	t_stack	*a_cpy;
 	int		n_chunks;
-	// (void) b;
+
 	if (bigger_100 == 1)
 		n_chunks = 11;
 	else
