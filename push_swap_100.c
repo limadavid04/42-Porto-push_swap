@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:38:14 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 18:10:34 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 18:24:46 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,12 @@ void	push_last_chunk(t_stack *a, t_stack *b)
 	push_swap_3(a);
 }
 
-void	push_by_chunk(t_stack *a, t_stack *b)
+void	push_by_chunk(t_stack *a, t_stack *b, int n_chunks)
 {
-	int	n_chunk;
 	int	i;
 
-	n_chunk = 5;
 	i = 0;
-	while (i < n_chunk - 1)
+	while (i < n_chunks - 1)
 	{
 		while (1)
 		{
@@ -87,21 +85,25 @@ void	push_by_chunk(t_stack *a, t_stack *b)
 	push_last_chunk(a, b);
 }
 
-void	push_swap_100(t_stack *a, t_stack *b)
+void	push_swap_100(t_stack *a, t_stack *b, int bigger_100)
 {
 	t_stack	*a_cpy;
-
-	(void) b;
+	int		n_chunks;
+	// (void) b;
+	if (bigger_100 == 1)
+		n_chunks = 11;
+	else
+		n_chunks = 5;
 	a_cpy = malloc(sizeof(t_stack));
 	a_cpy->stack = (int *)ft_calloc(a->size, sizeof(int));
 	a_cpy->size = a->size;
 	array_cpy(a, a_cpy);
 	bubble_sort(a_cpy);
-	get_pivots(a_cpy, 5);
+	get_pivots(a_cpy, n_chunks);
 	a->pivots = a_cpy->pivots;
 	free(a_cpy->stack);
 	free(a_cpy);
-	push_by_chunk(a, b);
+	push_by_chunk(a, b, n_chunks);
 	sort_nbrs_into_a(a, b);
 
 	// int i = 0;

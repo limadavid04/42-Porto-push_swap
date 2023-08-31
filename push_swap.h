@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:04:29 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 17:07:39 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 18:19:18 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	push_swap(t_stack *a);
 void	push_swap_3(t_stack *a);
 int		max_index(t_stack *a);
 int		min_index(t_stack *a);
-void	push_swap_100(t_stack *a, t_stack *b);
+void	push_swap_100(t_stack *a, t_stack *b, int bigger_100);
 void	bubble_sort(t_stack *a);
 void	array_cpy(t_stack *a, t_stack *cpy);
 int		max_index2(t_stack *a, int max);
