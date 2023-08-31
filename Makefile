@@ -4,7 +4,7 @@ CFLAGS =-Wall -Wextra -Werror -g #-fsanitize=address
 LIBFT = ./libft/libft.a
 NAME = push_swap
 FILES = main utils moves moves2 moves3 push_swap\
-push_swap_100 utils2
+push_swap_100 utils2 push_big_nbrs_utils
 
 all: $(NAME)
 

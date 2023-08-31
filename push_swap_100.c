@@ -6,65 +6,12 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:38:14 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 13:15:05 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 16:01:44 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_pivots(t_stack *a_cpy, int n_chunks)
-{
-	int	chunk_size;
-	int	i;
-
-	i = 0;
-	chunk_size = a_cpy->size / n_chunks;
-	a_cpy->pivots = malloc(sizeof(int) * n_chunks);
-	while (i < n_chunks - 1)
-	{
-		a_cpy->pivots[i] = a_cpy->stack[chunk_size * (i + 1) - 1];
-		i++;
-	}
-	a_cpy->pivots[n_chunks - 1] = a_cpy->stack[a_cpy->size - 1];
-}
-
-int	get_index_top(t_stack *a, int mid, int pivot)
-{
-	int	i;
-	int	first_index;
-
-	i = 0;
-	first_index = 0;
-	while (i <= mid)
-	{
-		if (a->stack[i] <= pivot)
-		{
-			first_index = i;
-			break ;
-		}
-		i++;
-	}
-	return (first_index);
-}
-
-int	get_index_bottom(t_stack *a, int mid, int pivot)
-{
-	int	last_index;
-	int	i;
-
-	last_index = a->size - 1;
-	i = last_index;
-	while (i > mid)
-	{
-		if (a->stack[i] <= pivot)
-		{
-			last_index = i;
-			break ;
-		}
-		i--;
-	}
-	return (last_index);
-}
 int	get_closest_chunk_nbr(t_stack *a, int pivot)
 {
 	int	mid;
@@ -77,9 +24,9 @@ int	get_closest_chunk_nbr(t_stack *a, int pivot)
 
 	if (!(a->stack[first_index] <= pivot) && !(a->stack[last_index] <= pivot))
 		return (0);
-	else if (a->stack[first_index <= pivot] && !(a->stack[last_index] <= pivot))
+	else if (a->stack[first_index] <= pivot && !(a->stack[last_index] <= pivot))
 		return (1);
-	else if (a->stack[last_index <= pivot] && !(a->stack[first_index] <= pivot))
+	else if (a->stack[last_index] <= pivot && !(a->stack[first_index] <= pivot))
 		return (2);
 	else if (first_index <= (a->size - 1 - last_index))
 		return (1);
@@ -87,33 +34,36 @@ int	get_closest_chunk_nbr(t_stack *a, int pivot)
 		return (2);
 }
 
-void	push_from_top(t_stack *a, t_stack *b, int pivot)
-{
 
-	while (1)
+void	push_last_chunk(t_stack *a, t_stack *b)
+{
+	int	max;
+	int	max2;
+	int	max3;
+
+	if (a->size <= 3)
 	{
-		if (a->stack[0] <= pivot)
-		{
-			pb(b, a);
-			break ;
-		}
-		ra(a);
+		push_swap_3(a);
+		return ;
 	}
+	max = a->stack[max_index(a)];
+	max2 = max_index2(a, max);
+	max3 = max_index3(a, max, max2);
+
+	// ft_printf("max1 = %d\n", max);
+	// ft_printf("max2 = %d\n", max2);
+	// ft_printf("max3 = %d\n", max3);
+
+	while (!(a->size <= 3))
+	{
+		if (a->stack[0] != max && a->stack[0] != max2 && a->stack[0] != max3)
+			pb(b, a);
+		else
+			ra(a);
+	}
+	push_swap_3(a);
 }
 
-void	push_from_bottom(t_stack *a, t_stack *b, int pivot)
-{
-
-	while (1)
-	{
-		if (a->stack[0] <= pivot)
-		{
-			pb(b, a);
-			break ;
-		}
-		rra(a);
-	}
-}
 void	push_by_chunk(t_stack *a, t_stack *b)
 {
 	int	n_chunk;
@@ -134,11 +84,10 @@ void	push_by_chunk(t_stack *a, t_stack *b)
 		}
 		i++;
 	}
-	//push last chunk;
+	push_last_chunk(a, b);
+	// sort_nbrs_into_a()
 }
 
-
-//if get closest function couldnt find a meber of chunk return 0;
 void	push_swap_100(t_stack *a, t_stack *b)
 {
 	t_stack	*a_cpy;
@@ -154,14 +103,14 @@ void	push_swap_100(t_stack *a, t_stack *b)
 	free(a_cpy->stack);
 	free(a_cpy);
 	push_by_chunk(a, b);
-	int i = 0;
-	write(1, "\n",1);
-	while (i < 5)
-	{
-		ft_printf("%d\n", a->pivots[i]);
-		i++;
-	}
-	write(1, "\n",1);
+	// int i = 0;
+	// write(1, "\n",1);
+	// while (i < 5)
+	// {
+	// 	ft_printf("%d\n", a->pivots[i]);
+	// 	i++;
+	// }
+	// write(1, "\n",1);
 
 	// print_stack(a_cpy, a);
 }

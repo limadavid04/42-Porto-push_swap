@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:50:44 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 12:32:04 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 15:53:26 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	push_swap_3(t_stack *a)
 {
-	if (a->size == 2)
+	if (is_sorted(a))
+		return ;
+	else if (a->size == 2)
 		sa(a);
 	else if ((a->stack[0] > a->stack[1]) && (a->stack[1] > a->stack[2]))
 	{

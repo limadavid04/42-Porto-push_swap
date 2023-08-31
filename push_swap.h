@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:04:29 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/30 17:40:26 by dlima            ###   ########.fr       */
+/*   Updated: 2023/08/31 15:36:05 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,19 @@ void	rb(t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	push_swap(t_stack *a);
+void	push_swap_3(t_stack *a);
 int		max_index(t_stack *a);
 int		min_index(t_stack *a);
 void	push_swap_100(t_stack *a, t_stack *b);
 void	bubble_sort(t_stack *a);
 void	array_cpy(t_stack *a, t_stack *cpy);
+int		max_index2(t_stack *a, int max);
+int		max_index3(t_stack *a, int max, int max2);
+int		get_index_top(t_stack *a, int mid, int pivot);
+int		get_index_bottom(t_stack *a, int mid, int pivot);
+void	push_from_bottom(t_stack *a, t_stack *b, int pivot);
+void	push_from_top(t_stack *a, t_stack *b, int pivot);
+void	get_pivots(t_stack *a_cpy, int n_chunks);
+
 
 #endif
