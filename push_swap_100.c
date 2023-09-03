@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:38:14 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 23:05:00 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/03 17:59:52 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,6 @@ void	push_last_chunk(t_stack *a, t_stack *b)
 	max2 = max_index2(a, max);
 	max3 = max_index3(a, max, max2);
 
-	// ft_printf("max1 = %d\n", max);
-	// ft_printf("max2 = %d\n", max2);
-	// ft_printf("max3 = %d\n", max3);
-
 	while (!(a->size <= 3))
 	{
 		if (a->stack[0] != max && a->stack[0] != max2 && a->stack[0] != max3)
@@ -77,8 +73,8 @@ void	push_by_chunk(t_stack *a, t_stack *b, int n_chunks)
 				break ;
 			// else if (get_closest_chunk_nbr(a, a->pivots[i]) == 1)
 			push_from_top(a, b, a->pivots[i]);
-			// else if (get_closest_chunk_nbr(a, a->pivots[i]) == 2)
-			// 	push_from_bottom(a, b, a->pivots[i]);
+		// 	else if (get_closest_chunk_nbr(a, a->pivots[i]) == 2)
+		// 		push_from_bottom(a, b, a->pivots[i]);
 		}
 		i++;
 	}
@@ -105,6 +101,7 @@ void	push_swap_100(t_stack *a, t_stack *b, int bigger_100)
 	free(a_cpy);
 	push_by_chunk(a, b, n_chunks);
 	sort_nbrs_into_a(a, b);
+	free(a->pivots);
 
 	// int i = 0;
 	// write(1, "\n",1);

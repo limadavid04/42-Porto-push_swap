@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 09:57:10 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/30 17:56:31 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/03 17:53:59 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	is_sorted(t_stack *x)
 void	free_stack(t_stack *a)
 {
 	free(a->stack);
-	free(a->pivots);
 	free(a);
 }
 

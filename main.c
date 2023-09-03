@@ -6,13 +6,11 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:29:13 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/30 18:24:36 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/03 18:00:51 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 int	check_duplicates(t_stack *x)
 {
@@ -92,7 +90,6 @@ int	main(int argc, char *argv[])
 	a = malloc(sizeof(t_stack));
 	a->size = argc - 1;
 	a->stack = (int *)ft_calloc(a->size, sizeof(int));
-
 	get_list(a->stack, argv, a->size);
 	if (!(check_duplicates(a)))
 	{
@@ -105,8 +102,6 @@ int	main(int argc, char *argv[])
 		free_stack(a);
 		return (0);
 	}
-	// ft_printf("max_index = %d\n", max_index(a));
-	// ft_printf("min_index = %d\n", min_index(a));
 	push_swap(a);
 	free_stack(a);
 	return (0);

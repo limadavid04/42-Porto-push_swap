@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 13:40:15 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 18:05:31 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/03 18:02:19 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ void	push_from_top(t_stack *a, t_stack *b, int pivot)
 	}
 }
 
-void	push_from_bottom(t_stack *a, t_stack *b, int pivot)
-{
-	while (1)
-	{
-		if (a->stack[0] <= pivot)
-		{
-			pb(b, a);
-			break ;
-		}
-		rra(a);
-	}
-}
+// void	push_from_bottom(t_stack *a, t_stack *b, int pivot)
+// {
+// 	while (1)
+// 	{
+// 		if (a->stack[0] <= pivot)
+// 		{
+// 			pb(b, a);
+// 			break ;
+// 		}
+// 		rra(a);
+// 	}
+// }

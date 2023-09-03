@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:04:29 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 18:19:18 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/03 18:02:29 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		max_index2(t_stack *a, int max);
 int		max_index3(t_stack *a, int max, int max2);
 int		get_index_top(t_stack *a, int mid, int pivot);
 int		get_index_bottom(t_stack *a, int mid, int pivot);
-void	push_from_bottom(t_stack *a, t_stack *b, int pivot);
+// void	push_from_bottom(t_stack *a, t_stack *b, int pivot);
 void	push_from_top(t_stack *a, t_stack *b, int pivot);
 void	get_pivots(t_stack *a_cpy, int n_chunks);
 void	sort_nbrs_into_a(t_stack *a, t_stack *b);
