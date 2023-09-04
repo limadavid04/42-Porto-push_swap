@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dlima <dlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:29:13 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/04 14:33:08 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 13:59:23 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	get_list(t_stack *a, char *argv[])
 			ft_printf("Error\n");
 			exit(EXIT_FAILURE);
 		}
-		else if (ft_strlen(argv[i + 1]) == 11)
+		else if (ft_strlen(argv[i + 1]) <= 11)
 		{
 			if (!(check_int(argv[i + 1])))
 			{
