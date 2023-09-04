@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 09:57:10 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/03 17:53:59 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 14:35:01 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	max_index(t_stack *a)
 		i++;
 	}
 	return (max_index);
-
 }
 
 int	min_index(t_stack *a)
@@ -78,4 +77,3 @@ int	min_index(t_stack *a)
 	}
 	return (min_index);
 }
-

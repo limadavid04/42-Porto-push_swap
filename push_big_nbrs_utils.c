@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 13:40:15 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/04 14:22:09 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 14:32:21 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	get_pivots(t_stack *a_cpy, int n_chunks)
 
 void	push_from_top(t_stack *a, t_stack *b, int pivot)
 {
-
 	while (1)
 	{
 		if (a->stack[0] <= pivot)

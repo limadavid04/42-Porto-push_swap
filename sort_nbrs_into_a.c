@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:16:47 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/04 14:22:09 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 14:34:46 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	check_for_optimization(t_stack *b)
 	if (get_from_top == 1)
 		return (1);
 	return (0);
-
 }
 
 void	push_max(t_stack *a, t_stack *b, int max_i)
@@ -105,7 +104,6 @@ void	push_min(t_stack *a, t_stack *b, int min_i)
 	}
 }
 
-
 void	sort_nbrs_into_a(t_stack *a, t_stack *b)
 {
 	int	min_i;
@@ -125,4 +123,3 @@ void	sort_nbrs_into_a(t_stack *a, t_stack *b)
 	while (a->stack[0] != min)
 		rra(a);
 }
-

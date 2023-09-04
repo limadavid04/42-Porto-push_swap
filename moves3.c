@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:45:36 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/04 13:13:43 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 14:33:47 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	rr(t_stack *a, t_stack *b)
 	rotate(a);
 	rotate(b);
 	ft_printf("rr\n");
-
 }
 
 void	rra(t_stack *a)

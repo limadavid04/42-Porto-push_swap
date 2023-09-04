@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:38:14 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/04 12:54:58 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 14:35:28 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	check_chunk_nbrs(t_stack *a, int pivot)
 		i++;
 	}
 	return (0);
-
 }
-
 
 void	push_last_chunk(t_stack *a, t_stack *b)
 {
@@ -42,7 +40,6 @@ void	push_last_chunk(t_stack *a, t_stack *b)
 	max = a->stack[max_index(a)];
 	max2 = max_index2(a, max);
 	max3 = max_index3(a, max, max2);
-
 	while (!(a->size <= 3))
 	{
 		if (a->stack[0] != max && a->stack[0] != max2 && a->stack[0] != max3)
@@ -93,4 +90,3 @@ void	push_swap_100(t_stack *a, t_stack *b, int bigger_100)
 	sort_nbrs_into_a(a, b);
 	free(a->pivots);
 }
-

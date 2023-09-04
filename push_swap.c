@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:50:44 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/03 17:54:51 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 14:34:24 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	push_swap_5(t_stack *a, t_stack *b)
 
 	max = a->stack[max_index(a)];
 	min = a->stack[min_index(a)];
-
 	while (a->size != 3)
 	{
 		if (a->stack[0] == max || a->stack[0] == min)
@@ -79,10 +78,6 @@ void	push_swap(t_stack *a)
 		push_swap_100(a, b, 0);
 	else if (a->size > 100)
 		push_swap_100(a, b, 1);
-	// print_stack(a, b);
-	// if (is_sorted(a))
-	// 	ft_printf("LEZZZZZ GOOOOOOOOOOO");
 	free(b->stack);
 	free(b);
 }
-
