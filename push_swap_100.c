@@ -6,32 +6,25 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:38:14 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/03 17:59:52 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 12:54:58 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_closest_chunk_nbr(t_stack *a, int pivot)
+int	check_chunk_nbrs(t_stack *a, int pivot)
 {
-	int	mid;
-	int	first_index;
-	int	last_index;
+	int	i;
 
-	mid = ((a->size - 1) / 2);
-	first_index = get_index_top(a, mid, pivot);
-	last_index = get_index_bottom(a, mid, pivot);
+	i = 0;
+	while (i < a->size)
+	{
+		if (a->stack[i] <= pivot)
+			return (1);
+		i++;
+	}
+	return (0);
 
-	if (!(a->stack[first_index] <= pivot) && !(a->stack[last_index] <= pivot))
-		return (0);
-	else if (a->stack[first_index] <= pivot && !(a->stack[last_index] <= pivot))
-		return (1);
-	else if (a->stack[last_index] <= pivot && !(a->stack[first_index] <= pivot))
-		return (2);
-	else if (first_index <= (a->size - 1 - last_index))
-		return (1);
-	else
-		return (2);
 }
 
 
@@ -69,12 +62,9 @@ void	push_by_chunk(t_stack *a, t_stack *b, int n_chunks)
 	{
 		while (1)
 		{
-			if (get_closest_chunk_nbr(a, a->pivots[i]) == 0)
+			if (check_chunk_nbrs(a, a->pivots[i]) == 0)
 				break ;
-			// else if (get_closest_chunk_nbr(a, a->pivots[i]) == 1)
 			push_from_top(a, b, a->pivots[i]);
-		// 	else if (get_closest_chunk_nbr(a, a->pivots[i]) == 2)
-		// 		push_from_bottom(a, b, a->pivots[i]);
 		}
 		i++;
 	}
@@ -102,16 +92,5 @@ void	push_swap_100(t_stack *a, t_stack *b, int bigger_100)
 	push_by_chunk(a, b, n_chunks);
 	sort_nbrs_into_a(a, b);
 	free(a->pivots);
-
-	// int i = 0;
-	// write(1, "\n",1);
-	// while (i < 5)
-	// {
-	// 	ft_printf("%d\n", a->pivots[i]);
-	// 	i++;
-	// }
-	// write(1, "\n",1);
-
-	// print_stack(a_cpy, a);
 }
 

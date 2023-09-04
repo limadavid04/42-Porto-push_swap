@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:29:13 by dlima             #+#    #+#             */
-/*   Updated: 2023/09/03 18:00:51 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 14:22:09 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,29 @@ int	check_duplicates(t_stack *x)
 	return (1);
 }
 
-void	get_list(int *stack_a, char *argv[], int size)
+void	get_list(t_stack *a, char *argv[])
 {
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i < a->size)
 	{
-		stack_a[i] = ft_atoi(argv[i + 1]);
+		if (ft_strlen(argv[i + 1]) > 11)
+		{
+			free_stack(a);
+			ft_printf("Error\n");
+			exit(EXIT_FAILURE);
+		}
+		else if (ft_strlen(argv[i + 1]) == 11)
+		{
+			if (!(check_int(argv[i + 1])))
+			{
+				free_stack(a);
+				ft_printf("Error\n");
+				exit(EXIT_FAILURE);
+			}
+		}
+		a->stack[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
 }
@@ -68,7 +83,7 @@ int	is_num(char	*str)
 int	check_arguments(int argc, char *argv[])
 {
 	if (argc < 2)
-		return (0);
+		exit(EXIT_SUCCESS);
 	while (argc > 1)
 	{
 		if (!(is_num(argv[argc - 1])))
@@ -84,17 +99,17 @@ int	main(int argc, char *argv[])
 
 	if (!check_arguments(argc, argv))
 	{
-		ft_printf("ERROR\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	a = malloc(sizeof(t_stack));
 	a->size = argc - 1;
 	a->stack = (int *)ft_calloc(a->size, sizeof(int));
-	get_list(a->stack, argv, a->size);
+	get_list(a, argv);
 	if (!(check_duplicates(a)))
 	{
 		free_stack(a);
-		ft_printf("ERROR\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	if (is_sorted(a))
@@ -106,7 +121,3 @@ int	main(int argc, char *argv[])
 	free_stack(a);
 	return (0);
 }
-
-//check for max int and min int
-//should I check for 0 and -0?
-// if arg = 1 just print it

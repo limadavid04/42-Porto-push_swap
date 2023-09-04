@@ -6,11 +6,36 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:13:07 by dlima             #+#    #+#             */
-/*   Updated: 2023/08/31 15:37:07 by dlima            ###   ########.fr       */
+/*   Updated: 2023/09/04 12:37:12 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_int(char *str)
+{
+	int			i;
+	long int	number;
+	int			sign;
+
+	sign = 1;
+	number = 0;
+	i = 0;
+	if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9' && str[i])
+	{
+		number = number * 10 + (str[i] - 48);
+		i++;
+	}
+	number *= sign;
+	if (number >= -2147483648 && number <= 2147483647)
+		return (1);
+	return (0);
+}
 
 void	bubble_sort(t_stack *a)
 {

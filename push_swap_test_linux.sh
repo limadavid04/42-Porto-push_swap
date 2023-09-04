@@ -50,7 +50,7 @@ fi
 
 if [ -z "$1" ] || [ $1 != -b ]; then
 printf ${BLUE}"\n-------------------------------------------------------------\n"${DEF_COLOR};
-printf ${BLUE}"\n\t\t\tCONTROL ERRORS\t\n"${DEF_COLOR};
+printf ${BLUE}"\n\t\t\tCONTROL ErrorS\t\n"${DEF_COLOR};
 printf ${BLUE}"\n-------------------------------------------------------------\n\n"${DEF_COLOR};
 
 ARG="a"
@@ -3489,7 +3489,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}1. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3503,7 +3503,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}2. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3517,7 +3517,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}3. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3531,7 +3531,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}4. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3545,7 +3545,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}5. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3559,7 +3559,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}6. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3573,7 +3573,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}7. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3587,7 +3587,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}8. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3601,7 +3601,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}9. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3615,7 +3615,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}10. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3629,7 +3629,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}11. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -3643,7 +3643,7 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}12. [KO]${DEF_COLOR}";
 fi
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
@@ -4134,7 +4134,7 @@ else
 fi
 if [ $cont -eq 5 ]; then
 
-R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 ((cont4++))
 if [[ $R == 2 ]]; then
   printf "${GREEN}$cont3 [MEMORY OK] ${DEF_COLOR}\n";
@@ -4185,7 +4185,7 @@ printf ${MAGENTA}"\n\t\t\t  BONUS\t\t\n"${DEF_COLOR};
 printf ${MAGENTA}"\n-------------------------------------------------------------\n\n"${DEF_COLOR};
 
 printf ${MAGENTA}"\n-------------------------------------------------------------\n"${DEF_COLOR};
-printf ${MAGENTA}"\n\t\t\tCONTROL ERRORS\t\n"${DEF_COLOR};
+printf ${MAGENTA}"\n\t\t\tCONTROL ErrorS\t\n"${DEF_COLOR};
 printf ${MAGENTA}"\n-------------------------------------------------------------\n\n"${DEF_COLOR};
 
 ./checker "a" 2> test_check.txt
@@ -5103,7 +5103,7 @@ else
 	echo TEST $cont ARG:"$ARG" >> traces.txt
  	((res_2++))
 fi
-R=$(./push_swap $ARG | valgrind --log-fd=1 ./checker $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(./push_swap $ARG | valgrind --log-fd=1 ./checker $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}";
 else
@@ -5127,7 +5127,7 @@ else
 	echo TEST $cont ARG:"$ARG" >> traces.txt
  	((res_2++))
 fi
-R=$(./push_swap $ARG | valgrind --log-fd=1 ./checker $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+R=$(./push_swap $ARG | valgrind --log-fd=1 ./checker $ARG | grep -Ec 'no leaks are possible|Error SUMMARY: 0')
 if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}";
 else
